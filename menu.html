@@ -10,6 +10,9 @@
       border-collapse: collapse;
       width: 100%; /*테이블 가로 화면 100꽉차게*/
       text-align: center; /*글자 가운데정렬*/
+      background-image: url("666.jpg");
+      background-size: cover;
+      background-position: center;
     }
 
     th, td {
@@ -18,12 +21,12 @@
     }
 
     thead {
-      background-color: rgb(214, 153, 199); /*요일 줄 배경*/
+      background-color: rgb(230, 207, 224); /*요일 줄 배경*/
     }
 
     header {
       text-align: center; /*가운데정렬*/
-      background-color: #7f867c;
+      background-color: #a3a7a1;
       padding: 10px;
     }
 
@@ -39,6 +42,13 @@
         <nav> 06월 4주차 </nav>
         
     </header>
+    <br>
+
+    <img src="666.jpg" alt="식단 이미지" 
+    style="max-width: 50%;
+     height: auto; 
+     border-radius: 10px; 
+     box-shadow: 0 0 10px rgba(0,0,0,0.2);">
 
     <div>
   <h2>점심 메뉴</h2>
@@ -62,7 +72,7 @@
       <td>철판 닭갈비<br>완두콩밥<br>백짬뽕국물<br>마늘쫑볶음<br>요구르트</td>
       <td>소고기미역국<br>계란야채볶음밥<br>마라소세지볶음<br>계란후라이<br>귤</td>
       <td>냉메밀국수<br>돈가스,생선가스<br>브로콜리볶음<br>단호박샐러드<br>양배추피클<br>탄산음료</td>
-      <td>삼계탕 반마리<br>찹쌀밥<br>누룽지샐러드<br>깍두기<br>모닝빵<br>요플레</td>
+      <td>삼계탕<br>찹쌀밥<br>누룽지샐러드<br>깍두기<br>모닝빵<br>요플레</td>
     </tr>
   </tbody>
 </table>
@@ -76,11 +86,34 @@
             <option value="화요일">화요일: 철판 닭갈비</option>
             <option value="수요일">수요일: 마라소세지볶음</option>
             <option value="목요일">목요일: 냉메밀국수</option>
-            <option value="금요일">금요일: 삼계탕 반마리</option>
+            <option value="금요일">금요일: 삼계탕</option>
         </select>
 
   <button onclick="submitMenu()">전송</button>
 </div>
+<hr>
+
+<h2>오늘의 저녁메뉴 추천 </h2>
+<button onclick="recommendMenu()">메뉴 추천받기(결과보기)</button>
+<p id="result" 
+style="margin-top: 10px; font-size: 18px; font-weight: bold;"></p>
+
+<script>
+  function recommendMenu() {
+    const menus = [
+      "삼겹살",
+      "소곱창",
+      "엽떡",
+      "닭가슴살",
+      "공기",
+      "굶으세요",
+      "한잔해"
+    ];
+    const pick = menus[Math.floor(Math.random() * menus.length)];
+    document.getElementById("result").textContent = `추천 메뉴: ${pick}`;
+  }
+</script>
+
 
   </div>
 </div>
