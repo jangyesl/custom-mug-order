@@ -7,12 +7,12 @@
     <style>
 
     table {
-      border-collapse: collapse;
+      border-collapse: collapse;/* 셀 사이의 테두리를 합쳐서 */
       width: 100%; /*테이블 가로 화면 100꽉차게*/
       text-align: center; /*글자 가운데정렬*/
       background-image: url("777.jpg");
       background-size: cover;
-      background-position: center;
+      background-position: center; /* 배경 이미지를 가운데 정렬 */
     }
 
     th, td {
@@ -40,7 +40,10 @@
 
     <header> <h1>점심메뉴</h1>
         <nav> 06월 4주차 </nav>
-        
+        <p style="text-align:center; font-weight:bold;">
+        이 페이지는 <span id="visits">0</span> 번 방문되었습니다.
+        </p>
+
     </header>
     <br>
 
@@ -114,6 +117,18 @@ style="margin-top: 10px; font-size: 18px; font-weight: bold;"></p>
   }
 </script>
 
+
+<script>
+  fetch('https://api.countapi.xyz/hit/yeslmenu0628/pageview')
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById('visits').innerText = data.value;
+    })
+    .catch(err => {
+      console.error('카운터 에러:', err);
+      document.getElementById('visits').innerText = "에러!";
+    });
+</script>
 
   </div>
 </div>
