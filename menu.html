@@ -119,16 +119,17 @@ style="margin-top: 10px; font-size: 18px; font-weight: bold;"></p>
 
 
 <script>
-  fetch('https://api.countapi.xyz/hit/yeslmenu0628/pageview')
+  fetch('https://api.countapi.xyz/hit/yesl-final-countapi/v1')
     .then(res => res.json())
     .then(data => {
       document.getElementById('visits').innerText = data.value;
     })
     .catch(err => {
-      console.error('카운터 에러:', err);
-      document.getElementById('visits').innerText = "에러!";
+      console.error("카운터 오류:", err);
+      document.getElementById('visits').innerText = "err";
     });
 </script>
+
 
   </div>
 </div>
