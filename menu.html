@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 이번주 점심 메뉴</title>
+    <style>
+
+    table {
+      border-collapse: collapse;
+      width: 100%; /*테이블 가로 화면 100꽉차게*/
+      text-align: center; /*글자 가운데정렬*/
+    }
+
+    th, td {
+      border: 1px solid black; /*실선 테두리*/
+      padding: 8px; /*셀 안쪽여백주기 */
+    }
+
+    thead {
+      background-color: rgb(214, 153, 199); /*요일 줄 배경*/
+    }
+
+    header {
+      text-align: center; /*가운데정렬*/
+      background-color: #7f867c;
+      padding: 10px;
+    }
+
+    h1, h2 {
+      margin: 10px 0; /*제목 위아래 여백*/
+    }
+
+    </style>
+</head>
+<body>
+
+    <header> <h1>점심메뉴</h1>
+        <nav> 06월 4주차 </nav>
+        
+    </header>
+
+    <div>
+  <h2>점심 메뉴</h2>
+  <div>
+
+    <table>
+  <thead>
+    <tr>
+      <th>요일</th>
+      <th>월</th>
+      <th>화</th>
+      <th>수</th>
+      <th>목</th>
+      <th>금</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>메뉴</td>
+      <td>김치 전골나베<br>백미밥<br>숙주나물<br>돼지수육<br>깍두기<br>주스 택1</td>
+      <td>철판 닭갈비<br>완두콩밥<br>백짬뽕국물<br>마늘쫑볶음<br>요구르트</td>
+      <td>소고기미역국<br>계란야채볶음밥<br>마라소세지볶음<br>계란후라이<br>귤</td>
+      <td>냉메밀국수<br>돈가스,생선가스<br>브로콜리볶음<br>단호박샐러드<br>양배추피클<br>탄산음료</td>
+      <td>삼계탕 반마리<br>찹쌀밥<br>누룽지샐러드<br>깍두기<br>모닝빵<br>요플레</td>
+    </tr>
+  </tbody>
+</table>
+    <!--게시판 끝 -->
+
+    <div style="margin-top: 20px; text-align: center;">
+    <label for="favorite">가장 맘에 드는 메뉴는?</label>
+        <select id="favorite" name="favorite">
+            <option value="">-- 선택하세요 --</option>
+            <option value="월요일">월요일: 김치 전골나베</option>
+            <option value="화요일">화요일: 철판 닭갈비</option>
+            <option value="수요일">수요일: 마라소세지볶음</option>
+            <option value="목요일">목요일: 냉메밀국수</option>
+            <option value="금요일">금요일: 삼계탕 반마리</option>
+        </select>
+
+  <button onclick="submitMenu()">전송</button>
+</div>
+
+  </div>
+</div>
+    
+<script>
+  function submitMenu() {
+    const select = document.getElementById("favorite");
+    const value = select.value;
+
+    if (value) {
+      alert(value + " 메뉴가 전송되었습니다! 🍱");
+    } else {
+      alert("메뉴를 먼저 선택해주세요!");
+    }
+  }
+</script>
+
+</body>
+</html>
